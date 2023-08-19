@@ -68,3 +68,26 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Explicacion del proyecto
+
+El proyecto es sobre una tienda para productos referentes al cuidado diario del cuerpo, en la cual se desarrollo los siguientes componentes.
+
+1. ItemListContainer: este componente se encarga de pedir la informacion y setear los productos en un estado, implemetando funciones como useParams(), collection(), query(), getDocs(), map(), useState(), useEffect()
+
+2. ItemList: este componente recibe la informacion por props de ItemListContainer y por medio del metodo map crea un nuevo array con esa informacion
+
+3. Item: este componente se encarga de mostrar los datos del producto
+
+4. ItemDetailContainer: Este componente se encarga de mostrar la informacion de item por id
+
+5. ItemDetail: recibe el id de un producto desde ItemDetailContainer y muestras todas la informacion de ese producto en especifico, y contiene las funciones para determinar cuantos producto se van agregar al carrito
+
+6. ItemCount: recibe por props las cantidad de productos y contiene los botones para sumar, restar y agregar al carrito
+
+7. CardWidget: es el comoponente que muestra el numero de item que esta agregado al carrito.
+
+8. Carrito, CartContext: tiene la logica para mostrar los item que hay en el carrito, verificar la cantidad de item que hay en carrito, el total a pagar
+
+9. Checkout: tiene la logica para realizar la orden de compra y guardarla en el firebase

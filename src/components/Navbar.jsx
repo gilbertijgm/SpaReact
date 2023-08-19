@@ -7,14 +7,14 @@ const Navbar = () => {
     <nav className="navbar">
         <Link to="/inicio" className="logo"><h1>Spa</h1></Link>
         <ul className='menu-horizontal'>
-            <li><Link to="/inicio" className="">Inicio</Link></li>
-            <li><Link to="/tratamientos" className="">Tratamientos</Link></li>
+            <li><Link to="/" className="">Inicio</Link></li>
+            
             <li>
-              <Link to="/productos" className="">Productos</Link>
+              <Link  className="">Productos</Link>
               <ul className='menu-vertical'>
-                <li><Link to="/productos/pequeña" className="">pequeña</Link></li>
-                <li><Link to="/productos/grande" className="">grande</Link></li>
-                <li><Link to="/productos/personalizada" className="">personalizada</Link></li>
+                <li><Link to="/productos/velas" className="">Velas</Link></li>
+                <li><Link to="/productos/cuidados diarios" className="">Cuidados Diarios</Link></li>
+                <li><Link to="/productos/productos para masajes" className="">Crema para Masaje</Link></li>
               </ul>
             </li>
             <li><Link to="/contacto" className="">Contacto</Link></li>

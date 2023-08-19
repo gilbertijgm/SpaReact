@@ -8,10 +8,13 @@ const CardWidget = () => {
 
   return (
     <div>
-       <li><Link to="/carrito" className="">
+      <ul className='menu-horizontal'>
+        <li><Link to="/carrito" className="">
         Carrito
-        <span className="numerito">{cantidadEnCarrito()}</span>
+        <span className="">{cantidadEnCarrito()}</span>
         </Link></li>
+      </ul>
+       
     </div>
   )
 }

@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react'
 import { pedirDatos } from '../helpers/pedriDatos'
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../firebase/config";
 
 const ItemListContainer = () => {
 
@@ -13,16 +15,21 @@ const ItemListContainer = () => {
     const categoria = useParams().categoria; //capturamos el parametro en categoria
 
     useEffect(() => {
-      pedirDatos()
-      .then((res) =>{
-        if(categoria){
-          setProductos(res.filter((prod) => prod.categoria === categoria)); //hacemos el filtro de nuestro bd para ver si existe y seteralo
-          setTitulo(categoria); //seteamos el titulo para que cambien en la vista
-        } else{
-          setProductos(res); //si no setea todos los productos
-          setTitulo("Productos"); //si no se queda el titulo productos
-        }
+      
+      const productoRef = collection(db, "productos");
+
+      const q = categoria ? query(productoRef, where("categoria", "==", categoria)) : productoRef;
+
+      getDocs(q)
+      .then((resp) => {
+          setProductos(
+            resp.docs.map((doc) => {
+              return {...doc.data(), id: doc.id}
+            })
+          )
+          setTitulo(categoria);
       })
+
     }, [categoria])
     
 

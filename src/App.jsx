@@ -8,6 +8,7 @@ import Contacto from "./components/Contacto";
 import {  CartProvider } from "./context/CartContext";
 import Carrito from "./components/Carrito";
 import Tratamientos from "./components/Tratamientos";
+import Checkout from "./components/Checkout";
 
 function App() {
 
@@ -18,13 +19,14 @@ function App() {
             <Navbar />
 
             <Routes>
-                <Route path="/inicio" element={<Inicio />}></Route>
-                <Route path="/tratamientos" element={<Tratamientos />} />
+                <Route path="/" element={<Inicio />}></Route>
+                
                 <Route path="/productos" element={<ItemListContainer />}/>
                 <Route path="/productos/:categoria" element={<ItemListContainer />}/>
                 <Route path="/item/:id" element={<ItemDetailContainer  />}/>
                 <Route path="/contacto" element={<Contacto />}></Route>
                 <Route path="/carrito" element={<Carrito />}></Route>
+                <Route path="/checkout" element={<Checkout />}></Route>
             </Routes>
         </BrowserRouter>
       </CartProvider> 
